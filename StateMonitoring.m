@@ -1,3 +1,9 @@
+% Copyright 2023 Tampere University.
+% This software was developed as a part of doctroal studies of Mehdi Attar, funded by Fortum and Neste Foundation.
+% This source code is licensed under the MIT license. See LICENSE in the repository root directory.
+% This software can only be deployed by SimCES platform. (https://simcesplatform.github.io/)
+% Author: Mehdi Attar <mehdi.attar@tuni.fi>
+
 classdef StateMonitoring < handle
     
     properties
