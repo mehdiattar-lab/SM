@@ -124,7 +124,7 @@ classdef StateMonitoring < handle
             topicsIn(7) = java.lang.String('Init.NIS.NetworkBusInfo');  % SM needs to listen to Init.NIS.NetworkBusInfo topic published by Grid in the Epoch 1 
             topicsIn(8) = java.lang.String('Init.NIS.NetworkComponentInfo');    % SM needs to listen to Init.NIS.NetworkComponentInfo topic published by Grid in the Epoch 1
 
-            obj.AmqpConnector = fi.procemplus.amqp2math.AmqpTopicConnectorSync(AmqpProps, topicsIn); % using procemplus API for RabbitMQ broker connection
+            obj.AmqpConnector = fi.procemplus.amqp2math.AmqpTopicConnectorSync(AmqpProps, topicsIn); % using procemplus API for RabbitMQ broker connection. A synch API.
             disp(['connected to the simulation specific exchange:' obj.SimulationSpecificExchange])
             disp(['SimulationId:' obj.SimulationId])
             clear topicsIn
@@ -132,7 +132,7 @@ classdef StateMonitoring < handle
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Method 3
         
-        function Out=GetMsg(obj)
+        function Out=GetMsg(obj)         % since we have a synch API, for receiving new messages, we need to call the get function
             while 1>0
                 obj.State='Free';
                 message = obj.AmqpConnector.getMessage();

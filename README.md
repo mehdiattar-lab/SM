@@ -34,7 +34,7 @@ https://kannisto.github.io/Cocop.AmqpMathToolConnector
 
 https://github.com/simcesplatform/AmqpMathToolIntegration
 
-The following libraries were utilised in development. Therefore, all of the libraries should be downloaded and utilized based on instructions given in above webpages [1](https://kannisto.github.io/Cocop.AmqpMathToolConnector) and [2](https://github.com/simcesplatform/AmqpMathToolIntegration)
+The following libraries were utilised in development. Therefore, all of the libraries should be downloaded and utilized based on instructions given in above webpages [1](https://kannisto.github.io/Cocop.AmqpMathToolConnector) and [2](https://github.com/simcesplatform/AmqpMathToolIntegration). Nevertheless, in the current implementation, only the asynchonized API available in [1](https://kannisto.github.io/Cocop.AmqpMathToolConnector) is used.
 
 amqp-client-4.2.2.jar
 
