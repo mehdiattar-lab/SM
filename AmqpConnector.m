@@ -1,13 +1,17 @@
 %                        StateMonitoring (SM) Application System
-% The application system includes the following sub-programs:
-% 1- AmqpConnector . (It listens to the Management exchange)
-% 2- ManagementCallback. (It initiates an instance of StateMonitoring class)
-% 3- StateMonitoring. (It operates the StateMonitoring functionality for a simulation run)
-% Two APIs are used here.
-% 1- the API is autonomuos in a sense that it receives incoming messages irrespective of StateMonitoring workload. The API is used to listen to the Management exchange. 
+% In order to utilize the functionalities in the SM the user has to manually execute the AmqpConnector.
+% The total application system includes the following programs:
+% 1- AmqpConnector . (It listens to the Management exchange used by platform manager)
+% Management exchange documentation: https://simcesplatform.github.io/core_exchange-mgmt/#management-exchange
+% Platform manager documentation: https://simcesplatform.github.io/core_platformmanager/
+% 2- ManagementCallback. (It initiates an instance of SM class)
+% 3- StateMonitoring. (It operates the StateMonotoring functionalities in a simulation run)
+
+% Two APIs are used here when listening to incoming messages:
+% 1- the API is autonomuos in a sense that it receives incoming messages irrespective of SM's workload. The API is used to listen to the Management exchange. 
 % Please visit https://kannisto.github.io/Cocop.AmqpMathToolConnector/
-% 2- the API execution is dependant on the workload of StaeMonitoring. Once the StateMonitoring is idle, a new message could come.
-% Please visit https://git.ain.rd.tut.fi/procemplus/amqpmathtoolintegration
+% 2- the API execution is dependant on the workload of SM. Once the SM is idle, a new message could come.
+% Please visit https://github.com/simcesplatform/AmqpMathToolIntegration
 
 global NumOfSimRun     % global variable for the whole Matlab environment specifying the number of simulation runs.
 global Handles
